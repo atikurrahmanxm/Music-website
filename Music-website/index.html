@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Real Music House | Premium Sound & Streaming</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href="#home" class="brand-wrapper">
+                <img src="images/logo1.png" alt="Real Music House Logo" class="logo">
+                <span class="brand-title">REAL <span>MUSIC</span></span>
+            </a>
+            
+            <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-links">
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#specification">SPECIFICATION</a></li>
+                <li><a href="#tracks">PRODUCTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#tracks" class="nav-cta">LISTEN LIVE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content">
+                <!-- Left Content -->
+                <div class="hero-left">
+                    <div class="badge-pill">
+                        <span class="pulsing-dot"></span> 24/7 Lossless Audio Stream
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        THE <br>
+                        <span class="gradient-text">REAL MUSIC</span> <br>
+                        HOUSE
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Immerse yourself in acoustic depth, punchy bass, and master-crafted electronic vibes. Stream high-fidelity audio tuned for true music lovers.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#home" class="btn btn-primary" id="hero-play-direct">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Play Now
+                        </a>
+                        <a href="#tracks" class="btn btn-secondary">
+                            Explore Tracks ↓
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h4>320kbps</h4>
+                            <p>Studio Quality</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>Lossless</h4>
+                            <p>Pure Audio</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>100k+</h4>
+                            <p>Global Fans</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content: Glassmorphic Audio Player -->
+                <div class="hero-right">
+                    <div class="player-card">
+                        <!-- Card Header -->
+                        <div class="player-header">
+                            <div class="player-tag">
+                                <span class="live-badge"></span> Now Playing
+                            </div>
+                            
+                            <!-- Equalizer Visualizer -->
+                            <div class="equalizer" id="equalizer" aria-hidden="true">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </div>
+
+                        <!-- Spinning Vinyl Cover -->
+                        <div class="artwork-container">
+                            <div class="disc-wrapper" id="disc-wrapper">
+                                <img src="images/img.jpg" id="album-art" alt="Album Cover">
+                                <div class="disc-center-dot"></div>
+                            </div>
+                        </div>
+
+                        <!-- Track Information -->
+                        <div class="track-info">
+                            <p class="track-badge" id="track-badge">Electronic / Chill</p>
+                            <h3 class="track-title" id="track-title">Faded (Remix Edition)</h3>
+                            <p class="track-artist" id="track-artist">Alan Walker</p>
+                        </div>
+
+                        <!-- Interactive Seek Progress Bar -->
+                        <div class="progress-area" id="progress-container">
+                            <input type="range" class="timeline-slider" id="progress-bar" min="0" max="100" value="0" aria-label="Seek audio position">
+                            <div class="time-wrapper">
+                                <span id="current-time">0:00</span>
+                                <span id="duration-time">--:--</span>
+                            </div>
+                        </div>
+
+                        <!-- Player Controls -->
+                        <div class="player-controls">
+                            <button class="ctrl-btn" id="shuffle-btn" title="Shuffle Tracks" aria-label="Shuffle">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/>
+                                </svg>
+                            </button>
+
+                            <button class="ctrl-btn" id="prev-btn" title="Previous Track" aria-label="Previous Track">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                                </svg>
+                            </button>
+
+                            <!-- Primary Play/Pause Button -->
+                            <button class="main-play-btn" id="play-btn" title="Play/Pause" aria-label="Play or Pause">
+                                <img src="images/play.png" id="icon" alt="Play Button">
+                            </button>
+
+                            <button class="ctrl-btn" id="next-btn" title="Next Track" aria-label="Next Track">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                                </svg>
+                            </button>
+
+                            <button class="ctrl-btn" id="repeat-btn" title="Repeat Mode" aria-label="Repeat">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Volume Controls -->
+                        <div class="volume-area">
+                            <div class="volume-icon" id="volume-icon" title="Mute/Unmute" aria-label="Volume">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                    <path d="M3 9v6h4l5 5V4L9 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </div>
+                            <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.01" value="0.8" aria-label="Volume Slider">
+                        </div>
+
+                        <!-- Fast Switch Playlist List -->
+                        <div class="player-playlist">
+                            <div class="playlist-item active" data-index="0">
+                                <div class="playlist-info">
+                                    <span class="playlist-index">01</span>
+                                    <span class="playlist-title">Alan Walker - Faded</span>
+                                </div>
+                                <span class="track-status"></span>
+                            </div>
+                            <div class="playlist-item" data-index="1">
+                                <div class="playlist-info">
+                                    <span class="playlist-index">02</span>
+                                    <span class="playlist-title">Real Music - Melodic Vibes</span>
+                                </div>
+                                <span class="track-status"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Tracks Section (Products) -->
+        <section class="section-padding" id="tracks">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Featured Products</span>
+                    <h2 class="section-title">Trending Tracks & Beats</h2>
+                    <p class="section-subtitle">Stream losslessly or download master mixes directly for your personal audio library.</p>
+                </div>
+
+                <div class="tracks-grid">
+                    <!-- Track 1 Card -->
+                    <div class="track-card">
+                        <div class="card-cover">
+                            <img src="images/img.jpg" alt="Alan Walker Cover">
+                        </div>
+                        <div class="card-details">
+                            <span class="card-genre">Electronic / EDM</span>
+                            <h3 class="card-title">Faded (Remix Edition)</h3>
+                            <p class="card-artist">Alan Walker • 320kbps MP3</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="card-play-btn" data-index="0" title="Play Track" aria-label="Play Alan Walker">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <a href="images/Walker.mp3" download="Alan_Walker.mp3" class="card-download-btn" title="Download Song" aria-label="Download">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Track 2 Card -->
+                    <div class="track-card">
+                        <div class="card-cover">
+                            <img src="images/image.png" alt="Melodic Vibes Cover">
+                        </div>
+                        <div class="card-details">
+                            <span class="card-genre">Deep House / Beats</span>
+                            <h3 class="card-title">Melodic Vibes (Original)</h3>
+                            <p class="card-artist">The Real Music House • 320kbps</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="card-play-btn" data-index="1" title="Play Track" aria-label="Play Melodic Vibes">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <a href="images/sds.mp3" download="Real_Music_Melody.mp3" class="card-download-btn" title="Download Song" aria-label="Download">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section-padding" id="about" style="background: rgba(12, 12, 22, 0.6); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <img src="images/image.png" alt="Studio Production" class="about-image">
+                        <div class="about-floating-card">
+                            <div class="icon-box">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                    <path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h5>Hi-Res Certified</h5>
+                                <p>Analog Warmth & Precision</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-text">
+                        <span class="section-tag">About Our Sound</span>
+                        <h3>Crafting Sonic Depth & Pure Acoustic Emotion</h3>
+                        <p>
+                            The Real Music House is an independent acoustic lab and streaming space dedicated to raw sound quality. We reject over-compressed tracks in favor of wide dynamic ranges, velvety highs, and deep sub-bass frequencies.
+                        </p>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="feature-check">✓</div>
+                                <div>
+                                    <h4>320kbps Studio Master Files</h4>
+                                    <p>Preserves every nuance and reverberation of original instruments.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-check">✓</div>
+                                <div>
+                                    <h4>Adaptive Web Player</h4>
+                                    <p>Fast seeking, keyboard navigation, and responsive equalizer feedback.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-check">✓</div>
+                                <div>
+                                    <h4>Cross-Platform Optimization</h4>
+                                    <p>Crystal-clear acoustic rendering on mobile, tablet, and high-end studio monitors.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Section -->
+        <section class="section-padding" id="specification">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Audio Specs</span>
+                    <h2 class="section-title">Technical Specifications</h2>
+                    <p class="section-subtitle">Engineered to push acoustic hardware to its fullest potential.</p>
+                </div>
+
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+                            </svg>
+                        </div>
+                        <h4>Frequency Response</h4>
+                        <p>20 Hz – 22,000 Hz dynamic range for deep sub-bass clarity and crisp highs.</p>
+                    </div>
+
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                            </svg>
+                        </div>
+                        <h4>Dual Track Decoding</h4>
+                        <p>Seamless HTML5 Audio API streaming with zero-buffer instant buffering.</p>
+                    </div>
+
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                            </svg>
+                        </div>
+                        <h4>Zero Distortion</h4>
+                        <p>Mastered at -0.1 dB True Peak to eliminate clipping across Bluetooth and DAC outputs.</p>
+                    </div>
+
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                                <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                            </svg>
+                        </div>
+                        <h4>Responsive Glass UI</h4>
+                        <p>Full keyboard hotkeys (`Space`, `Arrows`, `M`) and touch support on mobile.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer & Contact Section -->
+    <footer class="footer-contact" id="contact">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="brand-wrapper">
+                        <img src="images/logo1.png" alt="Real Music House" class="logo">
+                        <span class="brand-title">REAL <span>MUSIC</span></span>
+                    </a>
+                    <p>
+                        Your portal for high-definition electronic and acoustic music production. Experience the rhythm like never before.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn" aria-label="Music Wave">🎵</a>
+                        <a href="#" class="social-btn" aria-label="Headphones">🎧</a>
+                        <a href="#" class="social-btn" aria-label="Studio">🎛️</a>
+                        <a href="#" class="social-btn" aria-label="Cloud">☁️</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#specification">Audio Specification</a></li>
+                        <li><a href="#tracks">Products & Tracks</a></li>
+                        <li><a href="#contact">Contact & Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Stay In The Loop</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">
+                        Subscribe to get early access to unreleased master tracks and acoustic sets.
+                    </p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Real Music House!');">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Real Music House. All rights reserved.</p>
+                <p>Designed with Glassmorphism & High Fidelity Audio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Element (Controlled by script.js) -->
+    <audio id="mysong" preload="metadata">
+        <source src="images/Walker.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
